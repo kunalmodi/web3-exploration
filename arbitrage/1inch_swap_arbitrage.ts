@@ -11,6 +11,9 @@ const startingTokens: { [id: string]: { symbol: string, chainId: number, address
   'weth': { symbol: 'WETH', chainId: 1, address: '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' },
   'aave': { symbol: "AAVE", chainId: 1, address: '0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9' },
   'usdc': { symbol: "USDC", chainId: 1, address: '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48' },
+  'mkr': { symbol: "MKR", chainId: 1, address: '0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2' },
+  'mana': { symbol: "MANA", chainId: 1, address: '0x0f5d2fb29fb7d3cfee444a200298f468908cc942' },
+  'ampl': { symbol: "AMPL", chainId: 1, address: '0xd46ba6d942050d489dbd938a2c909a5d5039a161' },
 };
 
 const sleep = (t: number) => new Promise(s => setTimeout(s, t));
