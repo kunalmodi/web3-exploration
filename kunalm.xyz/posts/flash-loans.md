@@ -36,7 +36,7 @@ It was tedious to try a bunch of combos and see what is profitable. How we can f
 For fun, we can query the exchange rate of various token pairs to see if we can find some good arbitrage oppurtunities. Since 1inch routes through Uniswap and Sushiswap, 1inch seems like a good place to start. Lucky for us, 1inch provides an official public API: `https://api.1inch.exchange/v3.0/1/quote` with exactly what we need. It also turns out there is a standard template for "lists of tokens", so we can get a variety of interesting seed lists without much work ([Coingecko](https://tokens.coingecko.com/uniswap/all.json), [Yearn](https://yearn.science/static/tokenlist.json), [Gemini](https://www.gemini.com/uniswap/manifest.json)). So all we need to do is look at all pairs of (loaned coin, intermediate coin) and (intermediate coin, loaned coin) to see if there is profit to be had. A more interesting version of this would check across different exchanges, DeFi mechanisms, and consider 2-hop swaps.
 
 
-I'll skip the implementation details, but you can see a basic script [here](https://github.com/kunalmodi/web3-explorations/tree/master/arbitrage) to identify profitable swaps. Here is the output of running it today:
+I'll skip the implementation details, but you can see a basic script [here](https://github.com/kunalmodi/web3-exploration/tree/master/arbitrage) to identify profitable swaps. Here is the output of running it today:
 
 ```
 kunal@machine$ ts-node 1inch_swap_arbitrage.ts dai 1000000000000000000000 coingecko
