@@ -8,13 +8,15 @@ permalink: posts/ipfs-website.html
 relative_prefix: "../"
 ---
 
-I've been diving into IPFS recently, and took it as an oppurtunity to migrate my blog (this page!) to IPFS. [IPFS](https://ipfs.io/) is a peer-to-peer protocol for hypermedia (web content) that is decentralized (think BitTorrent) and versioned/immutable (think Git) - essentially a more open, safe, and auditable way to store files online. For these reasons, IPFS is a core part of Web3 infrastructure - many DApps (like Uniswap) are served from IPFS to prevent tampering and censorship, and NFT metadata is often stored in IPFS.
+I've been diving into IPFS recently, and took it as an oppurtunity to migrate my blog (this website!) to IPFS. This page can be accessed on your browser via traditional DNS (kunalm.xyz), [IPFS](https://cloudflare-ipfs/ipfs/Qmb98SP1LpgtKcYD96jKEfzd8J5tDHtuoh3oQpLkeWtEXr/), and [IPNS](https://cloudflare-ipfs.com/ipns/_dnslink.kunalm.xyz/).
+
+A little background: [IPFS](https://ipfs.io/) is a peer-to-peer protocol for hypermedia (web content) that is decentralized (think BitTorrent) and versioned/immutable (think Git) - essentially a more open, safe, and auditable way to store files online. For these reasons, IPFS is a core part of Web3 infrastructure - many DApps (like Uniswap) are served from IPFS to prevent tampering and censorship, and NFT metadata is often stored in IPFS.
 
 I won't go into much detail on how IPFS works, but the relevant principles are:
 - Content is indexed by a hash of it's content (called a CID). Every change will result in a new CID.
-- Any node can advertise that it is hosting the CID content. It's as simple as `ipfs add index.html` to tell the network about a new file, and serve that file to the web
-- Content exists if (and only if) there is a node serving it. While gateways will cache content, at least 1 node needs to host the original file. This is called "pinning" and there are a variety of third party hosts that will do this for you (like [Pinata](https://pinata.cloud), [Infura](https://infura.io/), and [arweave](https://www.arweave.org/))
-- To access IPFS content via HTTP, you need a gateway that can resolve an IPFS url (`ipfs://$CID`). There are a variety of public ones(like cloudflare-ipfs.com/ and gateway.ipfs.io), and certain applications like [Opera](https://blogs.opera.com/tips-and-tricks/2021/02/opera-crypto-files-for-keeps-ipfs-unstoppable-domains/) support the protocol natively.
+- Any node can advertise that it is hosting the CID content. It's as simple as `ipfs add index.html` to tell the network about a new file, and serve that file to the web.
+- Content exists if (and only if) there is a node serving it. While gateways will cache content, at least 1 node needs to host the original file. This is called "pinning" and there are a variety of third party hosts that will do this for you (like [Pinata](https://pinata.cloud), [Infura](https://infura.io/), and [arweave](https://www.arweave.org/)).
+- To access IPFS content via HTTP, you need a gateway that can resolve an IPFS url (`ipfs://$CID`). There are a variety of public ones(like cloudflare-ipfs.com and gateway.ipfs.io), and certain applications like [Opera](https://blogs.opera.com/tips-and-tricks/2021/02/opera-crypto-files-for-keeps-ipfs-unstoppable-domains/) support the protocol natively.
 
 With that in mind, the first step is generating an html site.
 

@@ -33,7 +33,10 @@ On the top left, you can see the assets you put in and get out. In this case, I 
 
 It was tedious to try a bunch of combos and see what is profitable. How we can find these profitable pairs automatically?
 
-For fun, we can query the exchange rate of various token pairs to see if we can find some good arbitrage oppurtunities. Since 1inch routes through Uniswap and Sushiswap, 1inch seems like a good place to start. Lucky for us, 1inch provides an official public API: `https://api.1inch.exchange/v3.0/1/quote` with exactly what we need. It also turns out there is a standard template for "lists of tokens", so we can get a variety of interesting seed lists without much work ([Coingecko](https://tokens.coingecko.com/uniswap/all.json), [Yearn](https://yearn.science/static/tokenlist.json), [Gemini](https://www.gemini.com/uniswap/manifest.json)). I'll skip the implementation details, but you can see the script [here](https://github.com/kunalmodi/web3-explorations/tree/master/arbitrage), and the output:
+For fun, we can query the exchange rate of various token pairs to see if we can find some good arbitrage oppurtunities. Since 1inch routes through Uniswap and Sushiswap, 1inch seems like a good place to start. Lucky for us, 1inch provides an official public API: `https://api.1inch.exchange/v3.0/1/quote` with exactly what we need. It also turns out there is a standard template for "lists of tokens", so we can get a variety of interesting seed lists without much work ([Coingecko](https://tokens.coingecko.com/uniswap/all.json), [Yearn](https://yearn.science/static/tokenlist.json), [Gemini](https://www.gemini.com/uniswap/manifest.json)). So all we need to do is look at all pairs of (loaned coin, intermediate coin) and (intermediate coin, loaned coin) to see if there is profit to be had. A more interesting version of this would check across different exchanges, DeFi mechanisms, and consider 2-hop swaps.
+
+
+I'll skip the implementation details, but you can see a basic script [here](https://github.com/kunalmodi/web3-explorations/tree/master/arbitrage) to identify profitable swaps. Here is the output of running it today:
 
 ```
 kunal@machine$ ts-node 1inch_swap_arbitrage.ts dai 1000000000000000000000 coingecko
@@ -42,8 +45,9 @@ FOUND: DAI -> AMKR (+3.633%) (0x7deb5e830be29f91e298ba5ff1356bb7f8146998)
 ...
 ```
 
-Trying it out in Furucombo, we indeed get a return of 35 DAI for a 1000 DAI flashloan investment into AMKR!
+Trying it out in Furucombo, we indeed get a return of 35 DAI (36 - flashloan fee) for a 1000 DAI flashloan investment into AMKR!
 
 Some practical notes:
-- This script goes _slowly_ due to rate limiting. I'm sure there are plenty of oppurtunities to speed it up.
-- The highest percentage differences (>25%) are highly volatile, and it's quite hard to execute on them
+- This script goes _slowly_ due to rate limits. There are plenty of oppurtunities to speed it up.
+- The high percentage differences (>25%) are highly volatile, and it's quite hard to execute on them.
+- This doesn't take into gas and routing, which are important factors in determining profitability.
