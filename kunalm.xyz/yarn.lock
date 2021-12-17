@@ -9,6 +9,11 @@ clean-css@^5.2.2:
   dependencies:
     source-map "~0.6.0"
 
+eleventy@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/eleventy/-/eleventy-1.0.6.tgz#938fa5c85e9c6372010ac1852a41d86b9dac4561"
+  integrity sha512-IzaPK0P5eF/jm5qdOzrzq2947FFRKpZwHT8AR1WpGI4tTpkLnzwQF02p9m0o5XQQ4dypBExp69fUHViEiHUWpQ==
+
 luxon@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/luxon/-/luxon-2.1.1.tgz#34052f7a33a7989767637be7cf80b47db264ff88"
