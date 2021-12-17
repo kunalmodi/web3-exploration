@@ -1,15 +1,17 @@
 {
   "name": "kunalm.xyz",
   "scripts": {
-    "build": "rm -rf _site/ && eleventy && imagemin static/img/* --out-dir _site/static/img/",
+    "build": "rm -rf _site/ && yarn eleventy && yarn imagemin static/img/* --out-dir _site/static/img/",
     "deploy": "rm -rf _site/ && eleventy && imagemin static/img/* --out-dir _site/static/img/ && ipfs-deploy _site/ -p pinata -d cloudflare -t \"kunalm.xyz $(date +\"%m-%d-%Y %T\")\""
   },
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "@11ty/eleventy": "^0.12.1",
     "clean-css": "^5.2.2",
-    "eleventy": "^1.0.6",
+    "imagemin": "^8.0.1",
+    "imagemin-cli": "^7.0.0",
     "luxon": "^2.1.1"
   }
 }
