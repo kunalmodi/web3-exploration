@@ -1,0 +1,11 @@
+{
+  "name": "solana",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "cargo build-bpf --manifest-path=./program/Cargo.toml --bpf-out-dir=./dist/program",
+    "clean": "cargo clean --manifest-path=./program/Cargo.toml && rm -rf ./dist",
+    "test": "cargo test-bpf --manifest-path=./program/Cargo.toml"
+  }
+}
