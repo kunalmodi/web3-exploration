@@ -27,7 +27,7 @@ echo 'Hello World!' > README.md
 eleventy
 ```
 
-This saves an HTML index to the `_site` folder. Opening this (`open _site/index.html`) should open a simple browser window with "Hello World!". Boom, step 1 done! For a more interesting example, you can check out this site's source code [here](https://github.com/kunalmodi/web3-exploration/tree/master/kunalm.xyz).
+This saves an HTML index to the `_site` folder. Opening this (`open _site/index.html`) should open a simple browser window with "Hello World!". Boom, step 1 done! For a complete example (index, posts, styling, images), you can check out this site's source code [here](https://github.com/kunalmodi/web3-exploration/tree/master/kunalm.xyz).
 
 Second, we need to set up our DNS so our domain will route to IPFS content.
 

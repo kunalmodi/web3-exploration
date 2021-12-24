@@ -1,5 +1,6 @@
 const { DateTime } = require("luxon");
 const CleanCSS = require("clean-css");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy('favicon.ico');
@@ -20,6 +21,8 @@ module.exports = function(eleventyConfig) {
     if (url.startsWith('/')) return url.substr(1);
     return url;
   });
+
+  eleventyConfig.addPlugin(syntaxHighlight);
 
   return {};
 };

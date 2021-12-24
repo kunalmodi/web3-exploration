@@ -779,10 +779,11 @@
   border-radius: 6px;
 }
 
-.markdown-body code br,
+/* Kunal Note: Commenting this out because it messes with our syntax highligher */
+/* .markdown-body code br,
 .markdown-body tt br {
   display: none;
-}
+} */
 
 .markdown-body del code {
   text-decoration: inherit;

@@ -1,6 +1,6 @@
 ---
-title: "Flashloans, Arbitrage and Furucombo"
-description: Exploring Flashloans, Arbitrage, and Furucombo
+title: "Flash Loans: EIP-3156, Arbitrage, and Furucombo"
+description: "Flash Loans: EIP-3156, Arbitrage, and Furucombo"
 date: 2021-11-17
 layout: layouts/post.njk
 tags: posts
@@ -8,6 +8,9 @@ permalink: posts/flashloans.html
 relative_prefix: "../"
 og_img: "../static/img/furucombo-2.png"
 ---
+
+
+
 
 Flashloans are a fascinating DeFi mechanism, where you can get an arbitrarily large uncollateralized loan instantly so long as it is paid back within the same transaction block. If borrower fails to pay back the capital within the block, the entire transaction is reversed, enforcing the lender always gets it's money back (typically with a fixed fee of around 0.09%). The use cases range from arbitrage to self-liquidation. Flashloans have generated a ton of controversy in the past (some notable events: [Flashloan to pass a governance vote on MakerDAO](https://www.theblockcrypto.com/post/82721/makerdao-issues-warning-after-a-flash-loan-is-used-to-pass-a-governance-vote), [a CryptoPunk was "sold" for $500M+](https://decrypt.co/84756/no-someone-didnt-really-pay-532-million-cryptopunk-nft))
 

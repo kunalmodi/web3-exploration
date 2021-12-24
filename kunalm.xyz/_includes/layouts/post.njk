@@ -10,6 +10,13 @@ templateClass: tmpl-post
   {{ css | cssmin | safe }}
 </style>
 
+{% set prismcss %}
+  {% include "layouts/prism.css" %}
+{% endset %}
+<style>
+  {{ prismcss | cssmin | safe }}
+</style>
+
 <div class="post">
   <p class="time">
     <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
