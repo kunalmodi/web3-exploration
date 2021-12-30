@@ -1,14 +1,15 @@
 ---
 title: "Querying OpenSea data with Dune"
 description: "Learning Dune Analytics by querying OpenSea data"
-date: 2021-12-21
+date: 2021-12-23
 layout: layouts/post.njk
 tags: posts
 permalink: posts/dune-opensea.html
 relative_prefix: "../"
+og_img: "../static/img/dune-3.png"
 ---
 
-[Dune](https://dune.xyz/browse/dashboards) is an incredibly powerful blockchain analytics tool, though it can be a little daunting to use at first. Let's take a look at how we can query data about OpenSea through Dune.
+[Dune](https://dune.xyz/) is an incredibly powerful blockchain analytics tool, though it can be a little daunting to use at first. Let's take a look at how we can query data about OpenSea through Dune.
 
 ### A Dune Primer
 
@@ -148,7 +149,7 @@ WITH
     ), opensea_ordersMatched AS (
         SELECT evt_tx_hash, evt_block_time, "maker" AS buyer, "taker" AS seller, "price"
         FROM opensea."WyvernExchange_evt_OrdersMatched"
-        AND evt_block_time>='2021-01-01'
+        WHERE evt_block_time>='2021-01-01'
     )
 
 SELECT om.evt_tx_hash, om.buyer, om.seller, am.nft_contract, (om.price / 10^am.decimals) * am.price AS price_usd
