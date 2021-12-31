@@ -6,7 +6,7 @@ layout: layouts/post.njk
 tags: posts
 permalink: posts/dune-opensea.html
 relative_prefix: "../"
-og_img: "../static/img/dune-3.png"
+og_img: "dune-3.png"
 ---
 
 [Dune](https://dune.xyz/) is an incredibly powerful blockchain analytics tool, though it can be a little daunting to use at first. Let's take a look at how we can query data about OpenSea through Dune.

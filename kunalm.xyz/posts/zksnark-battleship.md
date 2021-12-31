@@ -6,7 +6,7 @@ layout: layouts/post.njk
 tags: posts
 permalink: posts/zksnark-battleship.html
 relative_prefix: "../"
-og_img: "../static/img/battleship-1.jpg"
+og_img: "battleship-1.jpg"
 ---
 
 I've been learning about zero knowledge proofs recently, and took it as an oppurtunity to build out a toy use case. This post walks through building a Battleship smart contract using zk-SNARKs, [circom](https://github.com/iden3/circom), [snarkjs](https://github.com/iden3/snarkjs), and Solidity.

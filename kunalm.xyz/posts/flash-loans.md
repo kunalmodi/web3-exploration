@@ -6,7 +6,7 @@ layout: layouts/post.njk
 tags: posts
 permalink: posts/flashloans.html
 relative_prefix: "../"
-og_img: "../static/img/furucombo-2.png"
+og_img: "furucombo-2.png"
 ---
 
 

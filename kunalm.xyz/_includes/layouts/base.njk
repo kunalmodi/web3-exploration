@@ -14,8 +14,8 @@
     <meta property="twitter:title" content="{{ title | safe }}" />
     <meta property="twitter:description" content="{{ description | safe }}" />
     {% if og_img %}
-    <meta property="og:image" content="{{ og_img }}" />
-    <meta property="twitter:image" content="{{ og_img }}" />
+    <meta property="og:image" content="https://kunalm.xyz/static/img/{{ og_img }}" />
+    <meta property="twitter:image" content="https://kunalm.xyz/static/img/{{ og_img }}" />
     {% endif %}
     <link href="{{ relative_prefix }}favicon.ico" rel="icon" />
 
