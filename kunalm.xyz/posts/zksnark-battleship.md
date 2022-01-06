@@ -1,7 +1,7 @@
 ---
-title: "BattleSnark: Using zk-SNARK to build Battleship"
-description: "Building an Ethereum Battleship game, with Circom & SnarkJS"
-date: 2021-12-29
+title: "BattleSnark: Learning zk-SNARK by building Battleship"
+description: "Building an Ethereum Battleship game, using Circom & SnarkJS"
+date: 2022-01-05
 layout: layouts/post.njk
 tags: posts
 permalink: posts/zksnark-battleship.html
@@ -9,11 +9,11 @@ relative_prefix: "../"
 og_img: "battleship-1.jpg"
 ---
 
-I've been learning about zero knowledge proofs recently, and took it as an oppurtunity to build out a toy use case. This post walks through building a Battleship smart contract using zk-SNARKs, [circom](https://github.com/iden3/circom), [snarkjs](https://github.com/iden3/snarkjs), and Solidity.
+I've been learning about zero knowledge proofs recently, and took it as an oppurtunity to build out a fun project. This post walks through building a Battleship smart contract using zk-SNARKs, [circom](https://github.com/iden3/circom), [snarkjs](https://github.com/iden3/snarkjs), and Solidity.
 
-As a little background: Zero knowledge proofs let you prove a statement is true without revealing any additional information about the statement. In practice, this might look like showing you are credit worthy without handing over your bank statements, or validating nuclear disarmament without revealing state secrets. Typically, zero knowledge proofs involve repeatedly asking questions in order to validate the statement (see Packy's [great article](https://www.notboring.co/p/zero-knowledge) for an example), but this is infeasible on the blockchain. [zk-SNARK](https://en.wikipedia.org/wiki/Non-interactive_zero-knowledge_proof) is class of zero knowledge proofs that don't require interaction - which makes them a great fit for transactional use cases.
+As a little background: Zero knowledge proofs let you prove a statement is true without revealing any additional information about the statement. In practice, this might look like showing you are credit worthy without handing over your bank statements, or validating nuclear disarmament without revealing state secrets. Typically, zero knowledge proofs involve repeatedly asking questions in order to validate the statement (see Packy's [great article](https://www.notboring.co/p/zero-knowledge) for an example), but this is infeasible on the blockchain. [zk-SNARK](https://en.wikipedia.org/wiki/Non-interactive_zero-knowledge_proof) is a class of zero knowledge proofs that don't require interaction - which makes them a great fit for transactional use cases.
 
-Thinking through the games I've played where you rely on the other player to not cheat, Battleship stood out (who hasn't had an opponent move ships around during the game, or not even place all of their ships on the board!). The rules of battleship are pretty straightforward: Each player places 5 ships on their secret board (ensuring they are non-overlapping), and then players take turn guessing coordinates where their opponent's ships might be. The first person to guess all the coordinates of the other player's ships wins.
+Thinking through the games I've played where we rely on other player not to cheat, Battleship stood out (who hasn't had an opponent move ships around during the game, or not even place all of their ships on the board!). The rules of battleship are pretty straightforward: Each player places 5 ships on their secret board (ensuring they are non-overlapping), and then players take turn guessing coordinates where their opponent's ships might be. The first person to guess all the coordinates of the other player's ships wins.
 
 ![Battleship 1](../static/img/battleship-1.jpg)
 
